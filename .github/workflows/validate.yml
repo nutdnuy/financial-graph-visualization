@@ -20,3 +20,5 @@ jobs:
           python-version: '3.x'
       - name: Validate deterministic examples
         run: python3 scripts/validate_examples.py
+      - name: Validate catalog cards
+        run: python3 scripts/generate_catalog_cards.py --check
