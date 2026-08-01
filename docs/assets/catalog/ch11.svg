@@ -5,7 +5,11 @@
   <rect x="24" y="24" width="592" height="312" rx="14" fill="#1E1E1E" stroke="#FFFFFF" stroke-opacity=".15"/>
   <rect x="52" y="52" width="82" height="8" rx="4" fill="#BB86FC"/>
   <text x="52" y="94" fill="#BB86FC" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="2">11 · FINANCIAL</text>
-  <g transform="translate(0 0)"><rect x="74" y="141" width="48" height="85" rx="5" fill="#BB86FC"/><rect x="156" y="122" width="48" height="104" rx="5" fill="#03DAC6"/><rect x="238" y="103" width="48" height="123" rx="5" fill="#BB86FC"/><rect x="320" y="84" width="48" height="142" rx="5" fill="#03DAC6"/><rect x="402" y="65" width="48" height="161" rx="5" fill="#BB86FC"/><rect x="484" y="158" width="48" height="68" rx="5" fill="#03DAC6"/><path d="M72 82 L170 116 L250 78 L350 124 L454 88 L552 106" fill="none" stroke="#FFFFFF" stroke-opacity=".7" stroke-width="4" stroke-linecap="round"/></g>
+  <g><g stroke-linecap="round" stroke-linejoin="round">
+  <rect x="72" y="110" width="206" height="100" rx="8" fill="#FFFFFF" fill-opacity=".04" stroke="#FFFFFF" stroke-opacity=".18"/><path d="M86 126 H264 M86 146 H264 M86 166 H264 M86 186 H264" stroke="#FFFFFF" stroke-opacity=".18" stroke-width="2"/><rect x="96" y="142" width="22" height="56" fill="#CF6679"/><rect x="128" y="122" width="22" height="76" fill="#03DAC6"/><rect x="160" y="154" width="22" height="44" fill="#BB86FC"/><path d="M90 172 L136 134 L184 162 L254 124" fill="none" stroke="#BB86FC" stroke-width="3"/>
+  <path d="M290 160 H340 M328 150 L340 160 L328 170" fill="none" stroke="#FFFFFF" stroke-opacity=".4" stroke-width="3"/>
+  <rect x="356" y="110" width="206" height="100" rx="8" fill="#FFFFFF" fill-opacity=".04" stroke="#FFFFFF" stroke-opacity=".18"/><line x1="378" y1="190" x2="540" y2="190" stroke="#FFFFFF" stroke-opacity=".25" stroke-width="3"/><rect x="404" y="154" width="42" height="36" rx="4" fill="#FFFFFF" fill-opacity=".18"/><rect x="472" y="126" width="42" height="64" rx="4" fill="#BB86FC"/><circle cx="493" cy="126" r="9" fill="#03DAC6"/>
+</g></g>
   <text x="52" y="250" fill="#FFFFFF" fill-opacity=".90" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="600">Visualization</text><text x="52" y="280" fill="#FFFFFF" fill-opacity=".90" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="600">Principles</text>
   <text x="52" y="322" fill="#FFFFFF" fill-opacity=".60" font-family="Arial, Helvetica, sans-serif" font-size="15">audience, clarity, efficiency</text>
 </svg>

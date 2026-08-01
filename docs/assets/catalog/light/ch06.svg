@@ -5,7 +5,13 @@
   <rect x="24" y="24" width="592" height="312" rx="14" fill="#FFFFFF" stroke="#000000" stroke-opacity=".15"/>
   <rect x="52" y="52" width="82" height="8" rx="4" fill="#6200EE"/>
   <text x="52" y="94" fill="#6200EE" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="2">06 · FINANCIAL</text>
-  <g transform="translate(0 0)"><rect x="74" y="94" width="48" height="132" rx="5" fill="#6200EE"/><rect x="156" y="75" width="48" height="151" rx="5" fill="#03DAC6"/><rect x="238" y="168" width="48" height="58" rx="5" fill="#6200EE"/><rect x="320" y="149" width="48" height="77" rx="5" fill="#03DAC6"/><rect x="402" y="130" width="48" height="96" rx="5" fill="#6200EE"/><rect x="484" y="111" width="48" height="115" rx="5" fill="#03DAC6"/><path d="M72 82 L170 116 L250 78 L350 124 L454 88 L552 106" fill="none" stroke="#000000" stroke-opacity=".7" stroke-width="4" stroke-linecap="round"/></g>
+  <g><g stroke-linejoin="round">
+  <rect x="78" y="132" width="58" height="70" rx="5" fill="#6200EE"/><line x1="136" y1="132" x2="170" y2="132" stroke="#000000" stroke-opacity=".35" stroke-dasharray="5 5" stroke-width="3"/>
+  <rect x="170" y="112" width="58" height="20" rx="4" fill="#03DAC6"/><line x1="228" y1="112" x2="262" y2="112" stroke="#000000" stroke-opacity=".35" stroke-dasharray="5 5" stroke-width="3"/>
+  <rect x="262" y="112" width="58" height="34" rx="4" fill="#B00020"/><line x1="320" y1="146" x2="354" y2="146" stroke="#000000" stroke-opacity=".35" stroke-dasharray="5 5" stroke-width="3"/>
+  <rect x="354" y="122" width="58" height="24" rx="4" fill="#03DAC6"/><line x1="412" y1="122" x2="446" y2="122" stroke="#000000" stroke-opacity=".35" stroke-dasharray="5 5" stroke-width="3"/>
+  <rect x="446" y="122" width="72" height="80" rx="5" fill="#6200EE"/>
+</g></g>
   <text x="52" y="250" fill="#000000" fill-opacity=".90" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="600">Performance Measurement</text>
   <text x="52" y="322" fill="#000000" fill-opacity=".60" font-family="Arial, Helvetica, sans-serif" font-size="15">attribution, grids, linked views</text>
 </svg>

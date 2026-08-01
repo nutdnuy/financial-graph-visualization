@@ -67,7 +67,7 @@ Browse the full visual catalog: [all chapter and example cards](docs/CATALOG.md#
 
 <h2 id="visual-catalog">Visual catalog</h2>
 
-<p>Browse all 26 chapter and example cards from the home page. The thumbnails are code-generated SVGs with a light fallback and dark-mode variant, so the gallery remains readable in either theme.</p>
+<p>Browse all 26 chapter and example cards from the home page. Every card uses a distinct, content-specific visual motif rather than a repeated category template. The thumbnails are code-generated SVGs with a light fallback and dark-mode variant, so the gallery remains readable in either theme.</p>
 
 <table>
 <tr>

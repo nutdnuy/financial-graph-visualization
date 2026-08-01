@@ -6,7 +6,7 @@ current decision.
 
 <h2 id="visual-card-gallery">Visual card gallery</h2>
 
-<p>Browse the skill as a visual catalog. Each card is a deterministic SVG thumbnail generated from explicit geometry and linked to the relevant chapter or example. Thumbnails follow the browser or operating-system color preference: light is the fallback, dark is selected when dark mode is active.</p>
+<p>Browse the skill as a visual catalog. Each card is a deterministic SVG thumbnail with a content-specific visual motif, generated from explicit geometry and linked to the relevant chapter or example. Thumbnails follow the browser or operating-system color preference: light is the fallback, dark is selected when dark mode is active.</p>
 
 <table>
 <tr>
