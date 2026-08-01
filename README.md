@@ -23,6 +23,7 @@ Preview under repository Settings.
 | Copy a prompt | [Copy-ready prompts](#copy-ready-prompts) |
 | Follow one input to one output | [Complete walkthrough](#complete-walkthrough) |
 | Choose a chapter | [Coverage catalog](docs/CATALOG.md) |
+| Browse all cards | [Visual card gallery](docs/CATALOG.md#visual-card-gallery) |
 | Check the package | `python3 scripts/validate_examples.py` |
 
 ## See it in 30 seconds
@@ -60,6 +61,8 @@ python3 scripts/validate_examples.py
 
 Every preview has an editable HTML/SVG source beside it. The examples are
 illustrative and do not provide investment advice.
+
+Browse the full visual catalog: [all chapter and example cards](docs/CATALOG.md#visual-card-gallery).
 
 ## Why this exists
 
@@ -171,6 +174,8 @@ references/source-notes.md       # provenance and limitations
 references/visual-index.md       # local-only visual routing index
 examples/                        # runnable HTML/SVG demonstrations
 scripts/validate_examples.py     # dependency-free smoke check
+scripts/generate_catalog_cards.py # deterministic SVG card generator
+docs/assets/catalog/              # generated visual card thumbnails
 docs/CATALOG.md                  # chapter and example catalog
 ```
 
