@@ -10,6 +10,10 @@ interaction model, and editable code-native implementation.
 [![Latest release](https://img.shields.io/github/v/release/nutdnuy/financial-graph-visualization?display_name=tag)](https://github.com/nutdnuy/financial-graph-visualization/releases/latest)
 [![Examples](https://img.shields.io/badge/examples-code--native-03DAC6)](examples/)
 
+The editable [social preview source](assets/social-preview.svg) is included
+for repository sharing. Export it to PNG when uploading a custom GitHub Social
+Preview under repository Settings.
+
 ## See it in 30 seconds
 
 The examples are dependency-free HTML/SVG files using labeled synthetic data.
