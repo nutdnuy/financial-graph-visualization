@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Security Assessment card</title>
+  <desc id="desc">Tile Framework, normalized comparison</desc>
+  <rect width="640" height="360" fill="#FFFFFF"/>
+  <rect x="24" y="24" width="592" height="312" rx="14" fill="#FFFFFF" stroke="#000000" stroke-opacity=".15"/>
+  <rect x="52" y="52" width="82" height="8" rx="4" fill="#6200EE"/>
+  <text x="52" y="94" fill="#6200EE" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="2">03 · FINANCIAL</text>
+  <g transform="translate(0 0)"><rect x="74" y="133" width="48" height="93" rx="5" fill="#6200EE"/><rect x="156" y="114" width="48" height="112" rx="5" fill="#03DAC6"/><rect x="238" y="95" width="48" height="131" rx="5" fill="#6200EE"/><rect x="320" y="76" width="48" height="150" rx="5" fill="#03DAC6"/><rect x="402" y="169" width="48" height="57" rx="5" fill="#6200EE"/><rect x="484" y="150" width="48" height="76" rx="5" fill="#03DAC6"/><path d="M72 82 L170 116 L250 78 L350 124 L454 88 L552 106" fill="none" stroke="#000000" stroke-opacity=".7" stroke-width="4" stroke-linecap="round"/></g>
+  <text x="52" y="250" fill="#000000" fill-opacity=".90" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="600">Security Assessment</text>
+  <text x="52" y="322" fill="#000000" fill-opacity=".60" font-family="Arial, Helvetica, sans-serif" font-size="15">Tile Framework, normalized comparison</text>
+</svg>

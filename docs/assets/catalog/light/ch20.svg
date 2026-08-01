@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Big Graph Data card</title>
+  <desc id="desc">filtering, grouping, scalability</desc>
+  <rect width="640" height="360" fill="#FFFFFF"/>
+  <rect x="24" y="24" width="592" height="312" rx="14" fill="#FFFFFF" stroke="#000000" stroke-opacity=".15"/>
+  <rect x="52" y="52" width="82" height="8" rx="4" fill="#03DAC6"/>
+  <text x="52" y="94" fill="#03DAC6" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="2">20 · GRAPH</text>
+  <g transform="translate(0 0)"><line x1="90" y1="68" x2="190" y2="118" stroke="#03DAC6" stroke-width="4" opacity=".75"/><line x1="190" y1="118" x2="300" y2="62" stroke="#03DAC6" stroke-width="4" opacity=".75"/><line x1="300" y1="62" x2="430" y2="132" stroke="#03DAC6" stroke-width="4" opacity=".75"/><line x1="430" y1="132" x2="530" y2="78" stroke="#03DAC6" stroke-width="4" opacity=".75"/><line x1="190" y1="118" x2="430" y2="132" stroke="#6200EE" stroke-width="3" stroke-dasharray="8 7" opacity=".8"/><circle cx="90" cy="68" r="16" fill="#6200EE" stroke="#FFFFFF" stroke-width="6"/><circle cx="190" cy="118" r="20" fill="#03DAC6" stroke="#FFFFFF" stroke-width="6"/><circle cx="300" cy="62" r="24" fill="#6200EE" stroke="#FFFFFF" stroke-width="6"/><circle cx="430" cy="132" r="16" fill="#03DAC6" stroke="#FFFFFF" stroke-width="6"/><circle cx="530" cy="78" r="20" fill="#6200EE" stroke="#FFFFFF" stroke-width="6"/></g>
+  <text x="52" y="250" fill="#000000" fill-opacity=".90" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="600">Big Graph Data</text>
+  <text x="52" y="322" fill="#000000" fill-opacity=".60" font-family="Arial, Helvetica, sans-serif" font-size="15">filtering, grouping, scalability</text>
+</svg>
