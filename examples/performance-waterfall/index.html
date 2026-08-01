@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Performance Waterfall</title>
+  <style>
+    :root { color-scheme:dark; --bg:#121212; --surface:#1e1e1e; --text:rgba(255,255,255,.87); --muted:rgba(255,255,255,.60); --primary:#bb86fc; --teal:#03dac6; --error:#cf6679; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.55 Arial,Helvetica,sans-serif; }
+    main { max-width:1100px; margin:0 auto; padding:40px 24px 56px; }
+    h1 { margin:0 0 8px; font-size:clamp(32px,4vw,48px); line-height:1.15; font-weight:600; }
+    p { color:var(--muted); max-width:760px; }
+    .eyebrow { color:var(--teal); font-size:12px; letter-spacing:.12em; text-transform:uppercase; font-weight:700; }
+    .panel { margin-top:26px; padding:22px; border:1px solid rgba(255,255,255,.12); border-radius:12px; background:var(--surface); }
+    svg { display:block; width:100%; height:auto; }
+    .method { margin-top:20px; padding:16px; border-left:3px solid var(--teal); color:var(--muted); font-size:13px; }
+    code { color:var(--primary); }
+    @media (max-width:700px) { main { padding:28px 16px 44px; } .panel { padding:12px; } }
+  </style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">Example 02 · decomposition</div>
+  <h1>Performance waterfall</h1>
+  <p>Show the starting value, positive and negative drivers, and ending value on one aligned baseline so the result remains auditable.</p>
+  <section class="panel"><svg id="chart" viewBox="0 0 1040 500" role="img" aria-labelledby="chart-title chart-desc"><title id="chart-title">Illustrative performance waterfall</title><desc id="chart-desc">Starting value of 100, positive contributions of 12 and 8, negative effects of 3 and 5, ending at 112.</desc></svg></section>
+  <div class="method"><strong>Method:</strong> the cumulative path is calculated from the ordered <code>components</code> array. Values are synthetic. The zero line, units, period, and cutoff are explicitly labeled.</div>
+</main>
+<script>
+  const start = 100;
+  const components = [
+    { label:'Contributions', value:12 },
+    { label:'Market return', value:8 },
+    { label:'Fees', value:-3 },
+    { label:'Withdrawals', value:-5 }
+  ];
+  const ending = start + components.reduce((sum, item) => sum + item.value, 0);
+  const svg = document.querySelector('#chart');
+  const NS='http://www.w3.org/2000/svg';
+  const add=(tag,attrs,text='')=>{const e=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));if(text)e.textContent=text;svg.appendChild(e);return e;};
+  const min=80,max=125, chartTop=52, bottom=382, left=70, width=900, barWidth=136, gap=34;
+  const y=value=>bottom-(value-min)/(max-min)*(bottom-chartTop);
+  [80,90,100,110,120].forEach(t=>{add('line',{x1:left,x2:left+width,y1:y(t),y2:y(t),stroke:'#ffffff','stroke-opacity':'.14'});add('text',{x:left-14,y:y(t)+5,fill:'#ffffff','fill-opacity':'.60','font-size':'12','text-anchor':'end','font-family':'Arial'},String(t));});
+  add('text',{x:left,y:30,fill:'#ffffff','fill-opacity':'.60','font-size':'13','font-family':'Arial'},'Value index · illustrative one-year period');
+  const bars=[{label:'Start',value:start,type:'total'}]; let cumulative=start; components.forEach(c=>{const next=cumulative+c.value;bars.push({label:c.label,value:c.value,start:cumulative,end:next,type:c.value>=0?'positive':'negative'});cumulative=next;}); bars.push({label:'End',value:ending,type:'total'});
+  bars.forEach((b,i) => {
+    const x = left + 36 + i * (barWidth + gap);
+    if (b.type === 'total') {
+      add('rect', {x, y:y(b.value), width:barWidth, height:bottom-y(b.value), rx:5, fill:'#bb86fc'});
+      add('text', {x:x+barWidth/2, y:y(b.value)-12, fill:'#ffffff', 'fill-opacity':'.87', 'font-size':'18', 'font-weight':'700', 'text-anchor':'middle', 'font-family':'Arial'}, b.value.toFixed(0));
+    } else {
+      const topValue = Math.max(b.start, b.end);
+      const bottomValue = Math.min(b.start, b.end);
+      const fill = b.type === 'positive' ? '#03dac6' : '#cf6679';
+      add('rect', {x, y:y(topValue), width:barWidth, height:y(bottomValue)-y(topValue), rx:5, fill});
+      add('text', {x:x+barWidth/2, y:y(topValue)-12, fill, 'font-size':'18', 'font-weight':'700', 'text-anchor':'middle', 'font-family':'Arial'}, `${b.value > 0 ? '+' : ''}${b.value}`);
+      add('line', {x1:i === 0 ? x : x-gap, x2:x, y1:y(b.start), y2:y(b.start), stroke:'#ffffff', 'stroke-opacity':'.28', 'stroke-dasharray':'3 4'});
+    }
+    const lines = b.label.split(' ');
+    lines.forEach((part,j) => add('text', {x:x+barWidth/2, y:420+j*17, fill:'#ffffff', 'fill-opacity':'.60', 'font-size':'12', 'text-anchor':'middle', 'font-family':'Arial'}, part));
+  });
+  add('text',{x:left+width,y:466,fill:'#ffffff','fill-opacity':'.60','font-size':'12','text-anchor':'end','font-family':'Arial'},'Source: synthetic example · method: ordered cumulative decomposition · cutoff: illustrative period end');
+</script>
+</body>
+</html>

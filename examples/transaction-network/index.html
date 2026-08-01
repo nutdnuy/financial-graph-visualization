@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Transaction Network</title>
+  <style>
+    :root { color-scheme:dark; --bg:#121212; --surface:#1e1e1e; --surface-2:#252525; --text:rgba(255,255,255,.87); --muted:rgba(255,255,255,.60); --primary:#bb86fc; --teal:#03dac6; --error:#cf6679; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.55 Arial,Helvetica,sans-serif; }
+    main { max-width:1180px; margin:0 auto; padding:40px 24px 56px; }
+    h1 { margin:0 0 8px; font-size:clamp(32px,4vw,48px); line-height:1.15; font-weight:600; }
+    p { color:var(--muted); max-width:780px; }
+    .eyebrow { color:var(--teal); font-size:12px; letter-spacing:.12em; text-transform:uppercase; font-weight:700; }
+    .panel { margin-top:26px; padding:18px; border:1px solid rgba(255,255,255,.12); border-radius:12px; background:var(--surface); }
+    svg { display:block; width:100%; height:auto; background:var(--surface-2); border-radius:8px; }
+    .method { margin-top:20px; padding:16px; border-left:3px solid var(--teal); color:var(--muted); font-size:13px; }
+    code { color:var(--primary); }
+    @media (max-width:700px) { main { padding:28px 16px 44px; } .panel { padding:10px; } }
+  </style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">Example 03 · topology before layout</div>
+  <h1>Transaction network</h1>
+  <p>Fixed geometry keeps the mental map stable while link type, direction, and weight stay visible. The example uses a small fraud-review slice with clearly labeled synthetic entities.</p>
+  <section class="panel"><svg id="network" viewBox="0 0 1120 620" role="img" aria-labelledby="network-title network-desc"><title id="network-title">Illustrative transaction network</title><desc id="network-desc">Eight entities connected by weighted payments and shared-owner relationships. Positions are fixed, not force-simulated.</desc></svg></section>
+  <div class="method"><strong>Method:</strong> node positions are declared in the <code>nodes</code> array; line width encodes transaction weight and dash pattern encodes relationship type. No random layout is used.</div>
+</main>
+<script>
+  const nodes = [
+    { id:'A1', label:'Alpha Co', group:'company', x:180, y:220, importance:1.0 },
+    { id:'B2', label:'Beta Co', group:'company', x:470, y:150, importance:.86 },
+    { id:'G3', label:'Gamma Co', group:'company', x:470, y:360, importance:.74 },
+    { id:'D4', label:'Delta Co', group:'company', x:790, y:220, importance:.82 },
+    { id:'O1', label:'Owner 1', group:'person', x:300, y:470, importance:.68 },
+    { id:'O2', label:'Owner 2', group:'person', x:670, y:500, importance:.62 },
+    { id:'R1', label:'Review', group:'risk', x:965, y:390, importance:.9 },
+    { id:'B5', label:'Bank', group:'institution', x:870, y:90, importance:.55 }
+  ];
+  const links = [
+    { from:'A1', to:'B2', weight:8, type:'payment' }, { from:'A1', to:'G3', weight:5, type:'payment' },
+    { from:'B2', to:'D4', weight:7, type:'payment' }, { from:'G3', to:'D4', weight:4, type:'payment' },
+    { from:'O1', to:'A1', weight:3, type:'shared-owner' }, { from:'O1', to:'G3', weight:3, type:'shared-owner' },
+    { from:'O2', to:'B2', weight:2, type:'shared-owner' }, { from:'O2', to:'D4', weight:2, type:'shared-owner' },
+    { from:'D4', to:'R1', weight:6, type:'review' }, { from:'B5', to:'R1', weight:4, type:'review' }
+  ];
+  const colors={company:'#bb86fc',person:'#03dac6',risk:'#cf6679',institution:'#ffffff'};
+  const svg=document.querySelector('#network'), NS='http://www.w3.org/2000/svg';
+  const add=(tag,attrs,text='')=>{const e=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));if(text)e.textContent=text;svg.appendChild(e);return e;};
+  const byId=Object.fromEntries(nodes.map(n=>[n.id,n]));
+  add('defs',{}); const defs=svg.querySelector('defs'); const marker=document.createElementNS(NS,'marker'); Object.entries({id:'arrow',viewBox:'0 0 10 10',refX:'9',refY:'5',markerWidth:'7',markerHeight:'7',orient:'auto-start-reverse'}).forEach(([k,v])=>marker.setAttribute(k,v)); const path=document.createElementNS(NS,'path'); Object.entries({d:'M 0 0 L 10 5 L 0 10 z',fill:'#ffffff','fill-opacity':'.55'}).forEach(([k,v])=>path.setAttribute(k,v)); marker.appendChild(path); defs.appendChild(marker);
+  links.forEach(l=>{const a=byId[l.from],b=byId[l.to];add('line',{x1:a.x,y1:a.y,x2:b.x,y2:b.y,stroke:l.type==='payment'?'#03dac6':l.type==='review'?'#cf6679':'#bb86fc','stroke-opacity':'.62','stroke-width':1+l.weight*.65,'stroke-dasharray':l.type==='shared-owner'?'7 6':'none','marker-end':'url(#arrow)'});});
+  nodes.forEach(n=>{const r=14+n.importance*10;add('circle',{cx:n.x,cy:n.y,r,fill:colors[n.group], 'fill-opacity':'.92',stroke:'#121212','stroke-width':'5'});add('text',{x:n.x,y:n.y+r+24,fill:'#ffffff','fill-opacity':'.87','font-size':'15','text-anchor':'middle','font-family':'Arial'},n.label);});
+  add('text',{x:40,y:42,fill:'#ffffff','fill-opacity':'.60','font-size':'13','font-family':'Arial'},'Fixed positions · directed links · width = weight · dashed = shared owner');
+  [['company','#bb86fc'],['person','#03dac6'],['risk','#cf6679'],['institution','#ffffff']].forEach(([label,color],i)=>{const x=45+i*170;add('circle',{cx:x,cy:570,r:7,fill:color});add('text',{x:x+16,y:575,fill:'#ffffff','fill-opacity':'.60','font-size':'13','font-family':'Arial'},label);});
+</script>
+</body>
+</html>
