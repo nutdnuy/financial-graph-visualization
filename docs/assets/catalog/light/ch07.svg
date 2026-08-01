@@ -5,7 +5,12 @@
   <rect x="24" y="24" width="592" height="312" rx="14" fill="#FFFFFF" stroke="#000000" stroke-opacity=".15"/>
   <rect x="52" y="52" width="82" height="8" rx="4" fill="#6200EE"/>
   <text x="52" y="94" fill="#6200EE" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="2">07 · FINANCIAL</text>
-  <g transform="translate(0 0)"><rect x="74" y="81" width="48" height="145" rx="5" fill="#6200EE"/><rect x="156" y="62" width="48" height="164" rx="5" fill="#03DAC6"/><rect x="238" y="155" width="48" height="71" rx="5" fill="#6200EE"/><rect x="320" y="136" width="48" height="90" rx="5" fill="#03DAC6"/><rect x="402" y="117" width="48" height="109" rx="5" fill="#6200EE"/><rect x="484" y="98" width="48" height="128" rx="5" fill="#03DAC6"/><path d="M72 82 L170 116 L250 78 L350 124 L454 88 L552 106" fill="none" stroke="#000000" stroke-opacity=".7" stroke-width="4" stroke-linecap="round"/></g>
+  <g><g stroke-linecap="round" stroke-linejoin="round">
+  <rect x="78" y="112" width="84" height="36" rx="5" fill="#6200EE"/><rect x="78" y="152" width="84" height="26" rx="5" fill="#03DAC6"/><rect x="78" y="182" width="84" height="24" rx="5" fill="#000000" fill-opacity=".18"/>
+  <rect x="232" y="120" width="84" height="50" rx="5" fill="#03DAC6"/><rect x="232" y="174" width="84" height="32" rx="5" fill="#B00020"/>
+  <path d="M162 130 C220 130 190 138 232 138 M162 165 C206 165 202 186 232 190 M316 145 C382 145 382 132 446 132 M316 190 C380 190 390 182 446 182" fill="none" stroke="#000000" stroke-opacity=".35" stroke-width="4"/>
+  <rect x="446" y="112" width="92" height="94" rx="6" fill="none" stroke="#6200EE" stroke-width="5"/><line x1="458" y1="154" x2="526" y2="154" stroke="#000000" stroke-opacity=".3" stroke-width="3"/>
+</g></g>
   <text x="52" y="250" fill="#000000" fill-opacity=".90" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="600">Financial Statements</text>
   <text x="52" y="322" fill="#000000" fill-opacity=".60" font-family="Arial, Helvetica, sans-serif" font-size="15">waterfall, cascade, transparency</text>
 </svg>
